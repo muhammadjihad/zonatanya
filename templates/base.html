@@ -1,0 +1,122 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	    <title>{{judul}}</title>
+	{% include "snippets/styles.html" %}
+	<link rel="icon" href="{% static "img/logo.jpg" %}">
+</head>
+<body>
+	
+	{% include "snippets/navbar.html" %}
+
+	<div class="jumbotron">
+	  <h1 class="display-4 text-center">{{tagJumbotron}}</h1>
+	  <p class="lead text-center">{{deskJumbotron}}</p>
+	  <hr class="my-4" style='width:27%' align="center">
+	  <p id='poweredby' class='text-center'>Powered by</p>
+	  <a class="text-center" href="https://www.zonabelajar.com/"><img class='logozonabelajar' src="{% static "img/zonatanya.png" %}" id="zonabelajarlogo"alt=""></a>
+	  <br>
+	  <a class="btn btn-primary btn-sm" href="#" role="button" id='tombolbertanya'>Mulai Bertanya!</a>
+	</div>
+
+	{% block logincontent %}
+	    
+	{% endblock logincontent %}
+	
+	<section>
+		{% block konten1 %}
+		{% for profil in info_penanya  %}
+			<div class="container-fluid" style="border-radius:10px;">
+				<div class="container bg-info text-light shadow" style="margin-top:0px;border-radius:20px;">
+					{# judul #}
+					<div class="row">
+						<div class="col-sm-12 text-center" id='tanyatanya'>
+							Tanya Tanya
+						</div>
+						<hr>
+					</div>
+					<div class="row">
+						<div class="col-sm-6">
+
+							{# Kategori dan isi Pertanyaan #}
+							<div class="row">
+								<div id='kategoripertanyaan' class="col-sm-12">
+									<a href="detail/{{profil.slug}}">
+										{{profil.kategoriPertanyaan}}
+									</a>
+								</div>
+							</div>
+							<hr>
+							<div class="row">
+								<div id='babpertanyaan' class="col-sm-12">
+									{{profil.babPertanyaan}}
+								</div>
+							</div>
+							<hr>
+							<div class="row">
+								<div class="col-sm-12">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde cumque itaque repudiandae repellendus maxime aliquam. Dicta iusto consectetur, labore, libero quos ipsam recusandae fugit perspiciatis delectus! Dignissimos fuga voluptatum nulla.</p>
+								</div>
+							</div>
+
+						</div>
+						{# Profl #}
+						<div class="col-sm-6">
+							{# judul Profil #}
+							<div class="row">
+								<div class="col-sm-12 text-center" id='profil'>
+									PROFIL
+								</div>
+							</div>
+							<hr>
+							{# Isi Profil #}
+							{# 1. Biodata #}
+							<div class="row">
+								<div class="col-sm-6">
+									Nama : {{profil.nama}}
+									<br>
+									Sekolah : {{profil.asalSekolah}}
+									<br>
+									Minat : {{profil.minat}}
+									<br>
+									<br>
+									<br>
+									Waktu Posting : {{profil.waktubertanya}}
+								</div>
+							{# Foto Profil #}
+								<div class="col-sm-6 text-center">
+									Foto
+									<br>
+									<img src="{% static "{{profil.foto_profil}}" %}" alt="">
+								</div>
+								<br>
+								<br>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-sm-12 text-center text-white mb-2">
+							<a href="{% url "penanya:formjawab" %}"><h3>Jawab</h3></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<br>
+		{% endfor %}
+		{% endblock konten1 %}
+	</section>
+
+	<section>
+		{% block konten2 %}
+		    
+		{% endblock konten2 %}
+	</section>
+
+	{% include "snippets/scripts.html" %}
+</body>
+</html>
