@@ -1,0 +1,96 @@
+.jumbotron{
+	background-image: url(http://127.0.0.1:8000/static/img/memphis.png);
+}
+
+#judulzonatanya{
+	font-family: Montserrat;
+	color: lightblue
+
+}
+
+.display-4{
+	font-family: Montserrat;
+	color: #00AFEF;
+	size: 20px;
+}
+
+.lead{
+
+	font-family: Arial, Helvetica, sans-serif;
+	color:#00AFEF;
+
+}
+
+#poweredby{
+	font-family: Arial, Helvetica, sans-serif;
+	color: #B3B3B4;
+	font-size : 10px;
+}
+
+#zonabelajarjumbotron{
+	font-family: Montserrat;
+	color: #00AFEF;
+	font-size: 25px;
+
+}
+
+hr {
+	color: white;
+}
+
+#tanyatanya{
+	font-family: Montserrat;
+	color: orange;
+	font-size: 15px;
+	text-align: center;
+}
+
+#zonabelajarlogo{
+	display: block;
+	width: 70px;
+	float: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: none;
+}
+
+#tombolbertanya{
+	display: block;
+	width:150px;
+	float: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: none;
+}
+
+#profil{
+	display: block;
+	width: 70px;
+	font-family: Montserrat;
+	float: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: none;
+}
+
+#fotoprofil{
+}
+
+#babpertanyaan{
+	font-family: Montserrat;
+	float: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+}
+
+#kategoripertanyaan{
+	font-family: Montserrat;
+	font-size: 50px;
+	float: center;
+}
+
+
+label{
+	font-family: Montserrat
+}
